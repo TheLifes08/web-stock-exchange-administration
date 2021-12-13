@@ -13,10 +13,6 @@ import { Response } from "../../../classes/Response";
 export class StocksTable implements OnInit {
   stocks: Stock[] = [];
   isCorrect: boolean = true;
-  value: number = 0;
-
-  private onChange: (v: number) => void = () => {};
-  private onTouched: () => void = () => {};
 
   constructor(private service: StockService) {}
 
@@ -48,19 +44,5 @@ export class StocksTable implements OnInit {
       this.service.saveStocks(this.stocks);
       alert("Успешно сохранено!");
     }
-  }
-
-  registerOnChange(func: (v: number) => void): void {
-    this.onChange = func;
-  }
-
-  registerOnTouched(func: () => void): void {
-    this.onTouched = func;
-  }
-
-  updateValue(value: number): void {
-    this.value = value;
-    this.onChange(value);
-    this.onTouched();
   }
 }
