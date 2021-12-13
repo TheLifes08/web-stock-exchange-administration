@@ -1,0 +1,22 @@
+<div class="w3-container w3-center">
+  <div class="w3-panel">
+    <label for="dateStart" style="margin-bottom: 5px;">Начало торгов</label>
+    <input id="dateStart" type="datetime-local" class="w3-input" [(ngModel)]="settings.startDatetime">
+  </div>
+
+  <div class="w3-panel" style="margin-top: 5px;">
+    <label for="dateEnd" style="margin-bottom: 5px;">Окончание торгов</label>
+    <input id="dateEnd" type="datetime-local" class="w3-input" [(ngModel)]="settings.endDatetime">
+  </div>
+
+  <div class="w3-panel" style="margin-top: 5px;">
+    <label for="dateEnd" style="margin-bottom: 5px;">Интервал пересчета цены</label>
+    <input type="number" class="w3-input" [(ngModel)]="settings.priceCalculateInterval">
+  </div>
+
+  <button class="w3-blue-grey w3-button w3-border" style="width: calc(100% - 40px);" type="button" (click)="saveChanges()">Сохранить</button>
+
+  <div class="w3-panel w3-red" *ngIf="!isCorrect">
+    <strong>Ошибка!</strong> Некоторые данные введены некорретно.
+  </div>
+</div>

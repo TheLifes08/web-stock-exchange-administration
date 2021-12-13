@@ -1,0 +1,48 @@
+<div class="w3-container w3-center">
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-blue-gray">
+        <th class="w3-center">Название</th>
+        <th class="w3-center">Стартовая цена</th>
+        <th class="w3-center">Максимальный шаг</th>
+        <th class="w3-center">Количество</th>
+        <th class="w3-center">Закон распределения</th>
+        <th class="w3-center"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stock of stocks; let i = index">
+        <td>
+          <input class="w3-input w3-border" type="text" [(ngModel)]="stock.name" placeholder="Название" required>
+        </td>
+        <td>
+          <input class="w3-input w3-border" type="number" [(ngModel)]="stock.startPrice" placeholder="Стартовая цена" required>
+        </td>
+        <td>
+          <input class="w3-input w3-border" type="number" [(ngModel)]="stock.maximumStep" placeholder="Максимальный шаг" required>
+        </td>
+        <td>
+          <input class="w3-input w3-border" type="number" [(ngModel)]="stock.number" placeholder="Объем" required>
+        </td>
+        <td>
+          <select class="w3-select w3-border w3-white" [(ngModel)]="stock.changeType">
+            <option value="0">Равномерный</option>
+            <option value="1">Нормальный</option>
+          </select>
+        </td>
+        <td>
+          <button class="w3-pale-red w3-button w3-border" (click)="deleteStock(i)">-</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="w3-container" style="margin-top: 20px">
+    <button class="w3-blue-grey w3-button w3-border" style="margin-right: 10px;" (click)="saveChanges()">Сохранить</button>
+    <button class="w3-blue-grey w3-button w3-border" (click)="addStock()">Добавить</button>
+  </div>
+
+  <div class="w3-panel w3-red" *ngIf="!isCorrect">
+    <strong>Ошибка!</strong> Некоторые данные введены некорретно.
+  </div>
+</div>
