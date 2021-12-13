@@ -10,7 +10,6 @@ import {Response} from "../../../classes/Response";
   providers: [BrokerService],
   styleUrls: ['../../../app.component.css']
 })
-
 export class BrokersTable implements OnInit {
   brokers: Broker[] = [];
   isCorrect: boolean = true;
