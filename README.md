@@ -1,6 +1,6 @@
 # web-stock-exchange-administration
 
-Web-приложение для администрирования сервиса "Бираж акций". Лабораторная работа по дисциплине "WEB-технологии".
+Web-приложение для администрирования сервиса "Биржа акций". Лабораторная работа по дисциплине "WEB-технологии".
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
 
